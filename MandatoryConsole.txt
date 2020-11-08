@@ -1,0 +1,37 @@
+==section 1,2 ==
+cek versi npm (recomended 6.14)           = npm -v 
+cek versi nodejs (recomended v12.18)      = node -v
+start instal angular                      = npm install -g @angular/cli
+create new angular                        = ng new (namaApplikasi)
+start Angular                             = ng serve
+
+struktur coding Angular berada di (client > src )
+add plugin vscode angular language
+app.module.ts => sebagai route aplikasi
+
+download bootstrap ngx-bootstrap = http://valor-software.com/ngx-bootstrap
+add bootstrap                           = ng add ngx-bootstrap
+install font bootstrat                  = npm install font-awesome
+stop angular, kemudian start kemabali
+kemudian lihat perbedaaan di browser localhost:4200
+Protokol browser yang dijalankan adalah UDP
+
+generate certificate https
+https://medium.com/@rubenvermeulen/running-angular-cli-over-https-with-a-trusted-certificate-4a0d5f92747a
+
+skip no 28 tidak berhasil generete certificate dan copy ke dalam folder ssl
+
+
+==section 5==
+help create component                                                                   = ng g -h
+create new navbar bootstrap otomatis terbentuk folder nav source client/src/app/nav       = ng g c nav --skip-tests
+crate account login dlm folder baru client/src/app/_services                              = ng g s account --skip-tests
+create home page otomatis terbentuk folder home client/src/app/                            = ng g c home --skip-tests
+create register otomatis terbentuk folder register client/src/app/                  = ng g c register --skip-tests
+
+
+Download ngx bootstrap dropdowns
+https://valor-software.com/ngx-bootstrap/
+copykan import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+BsDropdownModule.forRoot()
+paste kedalam app.module.ts
