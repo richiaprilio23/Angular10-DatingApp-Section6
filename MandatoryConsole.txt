@@ -35,3 +35,20 @@ https://valor-software.com/ngx-bootstrap/
 copykan import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 BsDropdownModule.forRoot()
 paste kedalam app.module.ts
+
+
+==Section 6==
+
+6.1 Route
+create komponen member di dlm new folder member  = ng g c member-list --skip-tests
+create detail anggota di dlm new folder member   = ng g c member-detail --skip-tests
+create list otomatis terbentuk folder lists      = ng g c list --skip-tests
+create messages otomatis terbentuk folder messages = ng g c messages --skip-tests
+instal dashboard toatser (sebuah pop up notifikasi)               = npm install ngx-toastr
+create new route guard, Pilih Interface CanActive                = ng g guard auth --skip-tests
+install thema dari web bootswatch.com               = npm install bootswatch
+create  new module shared                        = ng g m shared --flat
+
+
+
+

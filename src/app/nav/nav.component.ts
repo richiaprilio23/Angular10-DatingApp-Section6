@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { error } from 'protractor';
 import { Observable } from 'rxjs';
 import { User } from '../_models/user';
@@ -14,7 +16,7 @@ export class NavComponent implements OnInit {
   // loggedIn: boolean;
   currentUser$: Observable<User>;
 
-  constructor(private accountService: AccountService) {}
+  constructor(private accountService: AccountService, private router: Router, private toastr: ToastrService) {}
 
   ngOnInit(): void {
     // this.getCurrentUser();
@@ -25,10 +27,12 @@ export class NavComponent implements OnInit {
   {
     // console.log(this.model);
     this.accountService.login(this.model).subscribe(response => {
-      console.log(response);
+      // console.log(response);
+      this.router.navigateByUrl('/members'); //saat login redirect ke halaman members
       // this.loggedIn = true;
     }, error =>{
       console.log(error);
+      this.toastr.error(error.error);
     }
     )
   }
@@ -37,6 +41,7 @@ export class NavComponent implements OnInit {
   {
     this.accountService.logout();
     // this.loggedIn = false;
+    this.router.navigateByUrl('/'); //saat logout kembali ke Home
   }
 
   // getCurrentUser()

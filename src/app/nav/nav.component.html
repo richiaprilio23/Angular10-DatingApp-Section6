@@ -1,20 +1,25 @@
 <!-- navbar copy dari https://getbootstrap.com/docs/4.5/examples/carousel/ -->
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
   <div class="container">
-    <a class="navbar-brand" href="#">Dating App (Richi23)</a>
+    <!-- <a class="navbar-brand" href="#">Dating App (Richi23)</a> -->
+    <a class="navbar-brand" routerLink='/'>Dating App (Richi23)</a>
 
     <!-- tag class html *ngIf="loggedIn" menampilkan nav (Matches, Lists, Message) saat berhasil login -->
     <!-- tag class html *ngIf="!loggedIn" menampilkan nav (Matches, Lists, Message) saat berhasil login  -->
       <!-- <ul class="navbar-nav mr-auto" *ngIf="loggedIn"> -->
-        <ul class="navbar-nav mr-auto" *ngIf="currentUser$ | async">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Matches</a>
+        <!-- <ul class="navbar-nav mr-auto" *ngIf="currentUser$ | async"> -->
+          <ul class="navbar-nav mr-auto" >
+        <li class="nav-item ">
+          <!-- <a class="nav-link" href="#">Matches</a> -->
+          <a class="nav-link" routerLink='/members' routerLinkActive='active'>Matches</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Lists</a>
+          <!-- <a class="nav-link" href="#">Lists</a> -->
+          <a class="nav-link" routerLink='/lists' routerLinkActive='active'>Lists</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="#">Message</a>
+          <!-- <a class="nav-link " href="#">Message</a> -->
+          <a class="nav-link " routerLink='/messages' routerLinkActive='active'>Message</a>
         </li>
         <!-- <li class="nav-item">
           <a class="nav-link " (click)="logout()">Logout</a>
@@ -22,8 +27,8 @@
       </ul>
 
       <!-- <div class="dropdown" *ngIf="loggedIn" dropdown> -->
-        <div class="dropdown" *ngIf="currentUser$ | async " dropdown>
-        <a class="dropdown-toggle text-light" dropdownToggle>welcome user</a>
+        <div class="dropdown" *ngIf="(currentUser$ | async) as user " dropdown>
+        <a class="dropdown-toggle text-light" dropdownToggle>welcome {{user.username | titlecase}}</a>
         <div class="dropdown-menu mt-3" *dropdownMenu>
             <a class="dropdown-item">Edit Profile</a>
             <div class="dropdown-divider"></div>
@@ -46,7 +51,7 @@
         class="form-control mr-sm-2" 
         type="Password" 
         placeholder="Password" >
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+        <button class="btn btn-success my-2 my-sm-0" type="submit">Login</button>
       </form>
     </div>
     
